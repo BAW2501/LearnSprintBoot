@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @RestController
 public class DemoApplication {
@@ -14,8 +16,8 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
     @GetMapping
-    public String hello(){
-        return "Hello";
+    public List<String> hello(){
+        return List.of("Hello","World");
     }
 
 }
